@@ -6,7 +6,7 @@ public class IteratorListaSimpleGenerica<T extends Comparable<T>> implements Ite
     private ListaSimpleEnlazadaGenerica<T> listaSimpleEnlazadaGenerica;
     private NodoGenerico<T> actual;
 
-    public IteratorListaSimpleGenerica(ListaSimpleEnlazadaGenerica listaSimpleEnlazadaGenerica) {
+    public IteratorListaSimpleGenerica(ListaSimpleEnlazadaGenerica<T> listaSimpleEnlazadaGenerica) {
         this.actual = listaSimpleEnlazadaGenerica.getPrimero();
 
     }

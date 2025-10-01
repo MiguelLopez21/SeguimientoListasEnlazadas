@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="55632aaa-5550-44ca-89f4-f5be41cdc450" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/SeguimientoListas.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ListaSimplementeEnlazadaCircular.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NodoGenerico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/listaSimplementeEnlazadaCircular.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/listaSimplementeEnlazadaCircular/co/edu/uniquindio/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/listaSimplementeEnlazadaCircular/co/edu/uniquindio/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/listaSimplementeEnlazadaCircular/co/edu/uniquindio/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/listaSimplementeEnlazadaCircular/co/edu/uniquindio/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/listaSimplementeEnlazadaCircular/co/edu/uniquindio/ListaSimplementeEnlazadaCircular.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/listaSimplementeEnlazadaCircular/co/edu/uniquindio/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/listaSimplementeEnlazadaCircular/co/edu/uniquindio/NodoGenerico.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/listaSimplementeEnlazadaCircular/co/edu/uniquindio/listaSimplementeEnlazadaCircular.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../listasEnlazadasSimples/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../listasEnlazadasSimples/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../listasEnlazadasSimples/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../listasEnlazadasSimples/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../listasEnlazadasSimples/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../listasEnlazadasSimples/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../listasEnlazadasSimples/src/main/java/co/edu/uniquindio/IteratorListaSimpleGenerica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../listasEnlazadasSimples/src/main/java/co/edu/uniquindio/ListaSimpleEnlazada.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../listasEnlazadasSimples/src/main/java/co/edu/uniquindio/ListaSimpleEnlazadaGenerica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../listasEnlazadasSimples/src/main/java/co/edu/uniquindio/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../listasEnlazadasSimples/src/main/java/co/edu/uniquindio/Nodo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../listasEnlazadasSimples/src/main/java/co/edu/uniquindio/NodoGenerico.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="33RkQWYSj1RKwTQuUwR0BOwabwf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/User/Desktop/Universidad/5. Quinto Semestre/Estructuras de Datos/Segundo corte/SeguimientoListas/listaSimplementeEnlazadaCircular/src/main/java/co/edu/uniquindio/Main.java",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.27812.49" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.27812.49" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55632aaa-5550-44ca-89f4-f5be41cdc450" name="Changes" comment="" />
+      <created>1759287257092</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1759287257092</updated>
+      <workItem from="1759287258233" duration="719000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

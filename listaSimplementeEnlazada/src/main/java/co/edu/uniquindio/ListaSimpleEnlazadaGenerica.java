@@ -86,10 +86,10 @@ public class ListaSimpleEnlazadaGenerica<T extends Comparable<T>> implements Ite
             actual.setProximo(newNodo);
 
             /*** Método con el for
-            for(int i = 0; i < index - 1; i++) {
-                actual = actual.getProximo();
-            }
-            ***/
+             for(int i = 0; i < index - 1; i++) {
+             actual = actual.getProximo();
+             }
+             ***/
         }
         tam++;
     }
@@ -98,13 +98,13 @@ public class ListaSimpleEnlazadaGenerica<T extends Comparable<T>> implements Ite
         return (primero == null || tam == 0) ? true: false;
 
         /***
-        if(primero == null || tam == 0) {
-            return true;
-        }
-        else {
-            return false;
-        }
-        ***/
+         if(primero == null || tam == 0) {
+         return true;
+         }
+         else {
+         return false;
+         }
+         ***/
     }
 
     public int localizar(T datoBusqueda) {
@@ -200,12 +200,12 @@ public class ListaSimpleEnlazadaGenerica<T extends Comparable<T>> implements Ite
         System.out.println(mensaje);
 
         /***Usando while
-        while(actual != null) {
-            mensaje += actual.getDato() + ",";
+         while(actual != null) {
+         mensaje += actual.getDato() + ",";
 
-            actual = actual.getProximo();
-        }
-        ***/
+         actual = actual.getProximo();
+         }
+         ***/
     }
 
 

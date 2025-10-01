@@ -1,7 +1,5 @@
 package co.edu.uniquindio;
 
-import java.util.Iterator;
-
 public class ListaSimplementeEnlazadaCircular<T extends Comparable<T>> {
     private NodoGenerico<T> primero;
     private int tam;
