@@ -85,5 +85,62 @@ public class ListaDoblementeEnlazada<T extends Comparable<T>> {
          }
          ***/
     }
+
+    public void insertarOrdenado(T dato) {
+        Nodo nuevo = new Nodo(dato);
+
+        // Si la lista está vacía
+        if (primero == null) {
+            primero = ultimo = nuevo;
+        }
+        // Si el dato es menor que el primero
+        else if (dato.compareTo(primero.dato) <= 0) {
+            nuevo.siguiente = primero;
+            primero.anterior = nuevo;
+            primero = nuevo;
+        }
+        // Si el dato es mayor que el último
+        else if (dato.compareTo(ultimo.dato) >= 0) {
+            ultimo.siguiente = nuevo;
+            nuevo.anterior = ultimo;
+            ultimo = nuevo;
+        }
+        // Si el dato va en medio
+        else {
+            Nodo actual = primero;
+            while (actual != null && dato.compareTo(actual.dato) > 0) {
+                actual = actual.siguiente;
+            }
+            // Insertar antes de "actual"
+            nuevo.siguiente = actual;
+            nuevo.anterior = actual.anterior;
+            actual.anterior.siguiente = nuevo;
+            actual.anterior = nuevo;
+        }
+
+        tam++;
+    }
+
+    // Método para ordenar la lista (burbuja)
+    public void ordenar() {
+        if (primero == null) return;
+
+        boolean huboCambio;
+        do {
+            huboCambio = false;
+            Nodo actual = primero;
+
+            while (actual != null && actual.siguiente != null) {
+                if (actual.dato.compareTo(actual.siguiente.dato) > 0) {
+                    // Intercambiar valores
+                    T temp = actual.dato;
+                    actual.dato = actual.siguiente.dato;
+                    actual.siguiente.dato = temp;
+                    huboCambio = true;
+                }
+                actual = actual.siguiente;
+            }
+        } while (huboCambio);
+    }
 }
 

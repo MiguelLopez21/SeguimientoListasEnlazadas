@@ -102,4 +102,78 @@ public class ListaCircularDoblementeEnlazada <T extends Comparable<T>> {
         }
         tam++;
     }
+
+    // Método para insertar en orden natural
+    public void insertarOrdenado(T dato) {
+        Nodo nuevo = new Nodo(dato);
+
+        // Caso: lista vacía
+        if (primero == null) {
+            primero = nuevo;
+            primero.siguiente = primero;
+            primero.anterior = primero;
+        }
+        else {
+            Nodo actual = primero;
+            boolean insertado = false;
+
+            do {
+                // Si el dato debe ir antes del actual
+                if (dato.compareTo(actual.dato) <= 0) {
+                    Nodo anterior = actual.anterior;
+
+                    nuevo.siguiente = actual;
+                    nuevo.anterior = anterior;
+
+                    anterior.siguiente = nuevo;
+                    actual.anterior = nuevo;
+
+                    // Si se inserta antes del primero, actualizar primero
+                    if (actual == primero) {
+                        primero = nuevo;
+                    }
+
+                    insertado = true;
+                    break;
+                }
+                actual = actual.siguiente;
+            } while (actual != primero);
+
+            // Si no se insertó en el ciclo, va al final
+            if (!insertado) {
+                Nodo ultimo = primero.anterior;
+
+                nuevo.siguiente = primero;
+                nuevo.anterior = ultimo;
+
+                ultimo.siguiente = nuevo;
+                primero.anterior = nuevo;
+            }
+        }
+        tam++;
+    }
+
+    // Método para ordenar la lista (burbuja adaptado a circular)
+    public void ordenar() {
+        if (primero == null || tam < 2) return;
+
+        boolean huboCambio;
+        do {
+            huboCambio = false;
+            Nodo actual = primero;
+
+            for (int i = 0; i < tam; i++) {
+                Nodo siguiente = actual.siguiente;
+
+                if (actual.dato.compareTo(siguiente.dato) > 0) {
+                    // Intercambiar valores
+                    T temp = actual.dato;
+                    actual.dato = siguiente.dato;
+                    siguiente.dato = temp;
+                    huboCambio = true;
+                }
+                actual = siguiente;
+            }
+        } while (huboCambio);
+    }
 }

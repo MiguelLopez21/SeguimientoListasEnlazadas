@@ -93,4 +93,74 @@ public class ListaSimplementeEnlazadaCircular<T extends Comparable<T>> {
          }
          ***/
     }
-}
+
+    public class ListaCircular<T extends Comparable<T>> {
+        private class Nodo {
+            T dato;
+            Nodo siguiente;
+
+            Nodo(T dato) {
+                this.dato = dato;
+            }
+        }
+
+        private Nodo primero;
+        private int tam;
+
+        // Insertar en orden natural
+        public void insertarOrdenado(T dato) {
+            Nodo nuevo = new Nodo(dato);
+
+            // Caso 1: lista vacía
+            if (primero == null) {
+                primero = nuevo;
+                primero.siguiente = primero; // circular
+            }
+            // Caso 2: insertar antes del primero (nuevo menor o igual que el primero)
+            else if (dato.compareTo(primero.dato) <= 0) {
+                Nodo ultimo = primero;
+                while (ultimo.siguiente != primero) {
+                    ultimo = ultimo.siguiente;
+                }
+                nuevo.siguiente = primero;
+                ultimo.siguiente = nuevo;
+                primero = nuevo; // actualizar primero
+            }
+            // Caso 3: insertar en medio o al final
+            else {
+                Nodo actual = primero;
+                while (actual.siguiente != primero && dato.compareTo(actual.siguiente.dato) > 0) {
+                    actual = actual.siguiente;
+                }
+                nuevo.siguiente = actual.siguiente;
+                actual.siguiente = nuevo;
+            }
+
+            tam++;
+        }
+
+        // Ordenar con burbuja adaptado a circular simplemente enlazada
+        public void ordenar() {
+            if (primero == null || tam < 2) return;
+
+            boolean huboCambio;
+            do {
+                huboCambio = false;
+                Nodo actual = primero;
+
+                for (int i = 0; i < tam; i++) {
+                    Nodo siguiente = actual.siguiente;
+
+                    if (actual.dato.compareTo(siguiente.dato) > 0) {
+                        // Intercambiar valores
+                        T temp = actual.dato;
+                        actual.dato = siguiente.dato;
+                        siguiente.dato = temp;
+                        huboCambio = true;
+                    }
+                    actual = siguiente;
+                }
+            } while (huboCambio);
+        }
+
+    }
