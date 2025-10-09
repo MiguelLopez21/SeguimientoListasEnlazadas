@@ -2,20 +2,30 @@ package co.edu.uniquindio;
 
 public class ListaDoblementeEnlazada<T extends Comparable<T>> {
     private NodoGenerico<T> primero;
+    private NodoGenerico<T> ultimo;
     private int tam;
 
     public ListaDoblementeEnlazada() {
         primero = null;
+        ultimo = null;
         tam = 0;
     }
 
-    //Getters y setters
+    // Getters y setters
     public NodoGenerico<T> getPrimero() {
         return primero;
     }
 
     public void setPrimero(NodoGenerico<T> primero) {
         this.primero = primero;
+    }
+
+    public NodoGenerico<T> getUltimo() {
+        return ultimo;
+    }
+
+    public void setUltimo(NodoGenerico<T> ultimo) {
+        this.ultimo = ultimo;
     }
 
     public int getTam() {
@@ -28,119 +38,120 @@ public class ListaDoblementeEnlazada<T extends Comparable<T>> {
 
     @Override
     public String toString() {
-        return "";
+        StringBuilder sb = new StringBuilder("[");
+        NodoGenerico<T> actual = primero;
+
+        while (actual != null) {
+            sb.append(actual.getDato());
+            if (actual.getProximo() != null) sb.append(", ");
+            actual = actual.getProximo();
+        }
+
+        sb.append("]");
+        return sb.toString();
     }
 
     public void agregarPrimero(T dato) {
-        NodoGenerico<T> newNodo = new NodoGenerico<>(dato);
+        NodoGenerico<T> nuevo = new NodoGenerico<>(dato);
 
         if (primero == null) {
-            primero = newNodo;
-            tam++;
+            primero = nuevo;
+            ultimo = nuevo;
+        } else {
+            nuevo.setProximo(primero);
+            primero.setAnterior(nuevo);
+            primero = nuevo;
         }
-        else {
-            newNodo.setProximo(primero);
-            primero.setAnterior(newNodo);
-            primero = newNodo;
-            tam++;
-        }
+        tam++;
     }
 
     public void agregarUltimo(T dato) {
-        NodoGenerico<T> newNodo = new NodoGenerico<>(dato);
+        NodoGenerico<T> nuevo = new NodoGenerico<>(dato);
 
         if (primero == null) {
-            primero = newNodo;
-            tam++;
+            primero = nuevo;
+            ultimo = nuevo;
         } else {
-            NodoGenerico<T> actual = primero;
-            while(actual.getProximo() != null) {
-                actual = actual.getProximo();
-            }
-            actual.setProximo(newNodo);
-            newNodo.setAnterior(actual);
-            tam++;
+            ultimo.setProximo(nuevo);
+            nuevo.setAnterior(ultimo);
+            ultimo = nuevo;
         }
+        tam++;
     }
 
     public void mostrar() {
         NodoGenerico<T> actual = primero;
-        String mensaje = "[";
+        StringBuilder mensaje = new StringBuilder("[");
 
-        //Usando do while
-        do {
-            mensaje += actual.getDato() + ",";
-
+        while (actual != null) {
+            mensaje.append(actual.getDato());
+            if (actual.getProximo() != null) mensaje.append(", ");
             actual = actual.getProximo();
-        } while (actual != null);
+        }
 
-        mensaje += "]";
+        mensaje.append("]");
         System.out.println(mensaje);
-
-        /***Usando while
-         while(actual != null) {
-         mensaje += actual.getDato() + ",";
-
-         actual = actual.getProximo();
-         }
-         ***/
     }
 
+    // ✅ Inserta manteniendo el orden natural
     public void insertarOrdenado(T dato) {
-        Nodo nuevo = new Nodo(dato);
+        NodoGenerico<T> nuevo = new NodoGenerico<>(dato);
 
-        // Si la lista está vacía
+        // Caso 1: lista vacía
         if (primero == null) {
-            primero = ultimo = nuevo;
-        }
-        // Si el dato es menor que el primero
-        else if (dato.compareTo(primero.dato) <= 0) {
-            nuevo.siguiente = primero;
-            primero.anterior = nuevo;
             primero = nuevo;
-        }
-        // Si el dato es mayor que el último
-        else if (dato.compareTo(ultimo.dato) >= 0) {
-            ultimo.siguiente = nuevo;
-            nuevo.anterior = ultimo;
             ultimo = nuevo;
         }
-        // Si el dato va en medio
+        // Caso 2: el dato es menor que el primero
+        else if (dato.compareTo(primero.getDato()) <= 0) {
+            nuevo.setProximo(primero);
+            primero.setAnterior(nuevo);
+            primero = nuevo;
+        }
+        // Caso 3: el dato es mayor que el último
+        else if (dato.compareTo(ultimo.getDato()) >= 0) {
+            ultimo.setProximo(nuevo);
+            nuevo.setAnterior(ultimo);
+            ultimo = nuevo;
+        }
+        // Caso 4: insertar en el medio
         else {
-            Nodo actual = primero;
-            while (actual != null && dato.compareTo(actual.dato) > 0) {
-                actual = actual.siguiente;
+            NodoGenerico<T> actual = primero;
+            while (actual != null && dato.compareTo(actual.getDato()) > 0) {
+                actual = actual.getProximo();
             }
             // Insertar antes de "actual"
-            nuevo.siguiente = actual;
-            nuevo.anterior = actual.anterior;
-            actual.anterior.siguiente = nuevo;
-            actual.anterior = nuevo;
+            NodoGenerico<T> anterior = actual.getAnterior();
+            nuevo.setProximo(actual);
+            nuevo.setAnterior(anterior);
+            anterior.setProximo(nuevo);
+            actual.setAnterior(nuevo);
         }
 
         tam++;
     }
 
-    // Método para ordenar la lista (burbuja)
+    // ✅ Método para ordenar (burbuja)
     public void ordenar() {
         if (primero == null) return;
 
         boolean huboCambio;
         do {
             huboCambio = false;
-            Nodo actual = primero;
+            NodoGenerico<T> actual = primero;
 
-            while (actual != null && actual.siguiente != null) {
-                if (actual.dato.compareTo(actual.siguiente.dato) > 0) {
+            while (actual != null && actual.getProximo() != null) {
+                if (actual.getDato().compareTo(actual.getProximo().getDato()) > 0) {
                     // Intercambiar valores
-                    T temp = actual.dato;
-                    actual.dato = actual.siguiente.dato;
-                    actual.siguiente.dato = temp;
+                    T temp = actual.getDato();
+                    actual.setDato(actual.getProximo().getDato());
+                    actual.getProximo().setDato(temp);
                     huboCambio = true;
                 }
-                actual = actual.siguiente;
+                actual = actual.getProximo();
             }
         } while (huboCambio);
     }
 }
+
 
